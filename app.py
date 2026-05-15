@@ -72,6 +72,30 @@ SAMPLE_ARTICLES = [
 ]
 
 
+START_TEMPLATE = """
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Fake News Game</title>
+<style>
+body{font-family:-apple-system,sans-serif;background:#1a1a2e;color:#eee;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0}
+.card{background:#16213e;border-radius:16px;padding:60px 50px;max-width:500px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+h1{font-size:2.5em;margin-bottom:10px}
+.subtitle{color:#aaa;font-size:1.1em;margin-bottom:30px;line-height:1.6}
+.btn{display:inline-block;padding:16px 48px;background:#4fc3f7;color:#1a1a2e;border:none;border-radius:30px;font-size:1.2em;font-weight:bold;cursor:pointer;transition:transform .2s;text-decoration:none}
+.btn:hover{transform:scale(1.08)}
+</style></head>
+<body>
+<div class="card">
+<h1>📰 Fake News Game</h1>
+<p class="subtitle">뉴스 기사를 읽고 진짜인지 가짜인지 맞춰보세요.<br>총 5라운드, 당신의 미디어 리터러시를 테스트합니다.</p>
+<form method="post" action="/start">
+<button type="submit" class="btn">🎮 게임 시작</button>
+</form>
+</div>
+</body>
+</html>
+"""
+
 ERROR_TEMPLATE = """
 <!DOCTYPE html>
 <html>
@@ -237,7 +261,13 @@ def get_article(article_id: int) -> dict | None:
 
 @app.route("/", methods=["GET"])
 def index():
-    """게임 시작/재시작"""
+    """시작 화면"""
+    return render_template_string(START_TEMPLATE)
+
+
+@app.route("/start", methods=["POST"])
+def start():
+    """게임 시작"""
     session.clear()
     try:
         article_ids = get_random_articles(5)
