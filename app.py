@@ -11,127 +11,97 @@ DATABASE = "news.db"
 SAMPLE_ARTICLES = [
     ("서울시, 2024년 대중교통 무료 환승 시간 30분에서 40분으로 확대",
      "서울시는 시민 편의를 위해 대중교통 무료 환승 허용 시간을 기존 30분에서 40분으로 확대한다고 발표했다. 이번 정책은 장거리 통근자들의 교통비 부담을 줄이기 위한 조치로, 내년 1월부터 시행될 예정이다.",
-     "real", "• 출처: 서울시 공식 보도자료 형식
-• 구체적 수치(30→40분)와 시행 시기 명시
-• 정책 배경(통근자 부담 완화) 제시", "서울시는 실제로 환승 시간 확대 정책을 발표한 바 있습니다."),
+     "real", "• 출처: 서울시 공식 보도자료 형식\n• 구체적 수치(30→40분)와 시행 시기 명시\n• 정책 배경(통근자 부담 완화) 제시", "서울시는 실제로 환승 시간 확대 정책을 발표한 바 있습니다."),
     ("WHO, 커피 하루 3잔 이상 섭취 시 수명 연장 효과 확인",
      "세계보건기구(WHO)는 대규모 역학 연구를 통해 하루 3잔 이상의 커피 섭취가 심혈관 질환 위험을 낮추고 평균 수명을 2년 연장시킨다는 연구 결과를 발표했다.",
-     "fake", "• 국제기구가 단일 식품에 '수명 연장' 효과를 단정하는 경우는 드묾
-• '평균 수명 2년 연장'이라는 수치의 출처 불명
-• 블랙커피 조건 등 부가 조건이 비과학적 서술", "WHO는 커피의 수명 연장 효과를 공식 확인한 적이 없습니다. 과장된 주장입니다."),
+     "fake", "• 국제기구가 단일 식품에 '수명 연장' 효과를 단정하는 경우는 드묾\n• '평균 수명 2년 연장'이라는 수치의 출처 불명\n• 블랙커피 조건 등 부가 조건이 비과학적 서술", "WHO는 커피의 수명 연장 효과를 공식 확인한 적이 없습니다. 과장된 주장입니다."),
     ("삼성전자, 반도체 미세공정 기술 3나노 양산 본격화",
      "삼성전자가 세계 최초로 3나노미터 GAA 공정 기반 반도체 양산을 본격화했다. 기존 5나노 대비 성능 23% 향상, 전력 소모 45% 절감 효과가 있으며, 주요 고객사 납품이 시작됐다.",
-     "real", "• GAA(Gate-All-Around)는 실제 반도체 공정 기술 용어
-• 성능/전력 수치가 업계 발표 형식과 일치
-• '세계 최초'는 기업 보도자료에서 흔히 사용되는 표현", "삼성전자는 실제로 3나노 GAA 공정 양산을 발표했습니다."),
+     "real", "• GAA(Gate-All-Around)는 실제 반도체 공정 기술 용어\n• 성능/전력 수치가 업계 발표 형식과 일치\n• '세계 최초'는 기업 보도자료에서 흔히 사용되는 표현", "삼성전자는 실제로 3나노 GAA 공정 양산을 발표했습니다."),
     ("NASA, 화성에서 미생물 화석 발견 공식 발표",
      "미국 항공우주국(NASA)은 화성 탐사 로버 퍼서비어런스가 수집한 암석 샘플에서 고대 미생물 화석을 발견했다고 공식 발표했다.",
-     "fake", "• '외계 생명체 최초 확인'급 뉴스의 파급력 고려
-• 퍼서비어런스의 실제 임무는 샘플 수집 후 지구 귀환 분석
-• 현재까지 화성 샘플은 지구에 도착하지 않은 상태", "NASA는 화성에서 미생물 화석을 공식 발견한 적이 없습니다."),
+     "fake", "• '외계 생명체 최초 확인'급 뉴스의 파급력 고려\n• 퍼서비어런스의 실제 임무는 샘플 수집 후 지구 귀환 분석\n• 현재까지 화성 샘플은 지구에 도착하지 않은 상태", "NASA는 화성에서 미생물 화석을 공식 발견한 적이 없습니다."),
     ("한국은행, 기준금리 0.25%p 인하 결정",
      "한국은행 금융통화위원회는 경기 둔화에 대응하기 위해 기준금리를 0.25%포인트 인하하기로 결정했다. 이번 인하로 기준금리는 연 3.25%가 되며, 가계 대출 금리 하락이 예상된다.",
-     "real", "• 금융통화위원회는 실제 한국은행 의사결정 기구
-• 0.25%p 단위 조정은 통상적 금리 변동 폭
-• 경기 둔화 대응은 일반적 금리 인하 사유", "한국은행은 실제로 경기 상황에 따라 기준금리를 조정합니다."),
+     "real", "• 금융통화위원회는 실제 한국은행 의사결정 기구\n• 0.25%p 단위 조정은 통상적 금리 변동 폭\n• 경기 둔화 대응은 일반적 금리 인하 사유", "한국은행은 실제로 경기 상황에 따라 기준금리를 조정합니다."),
     ("일본 정부, 2025년부터 주 4일 근무제 전면 의무화",
      "일본 정부는 저출산 문제 해결과 워라밸 개선을 위해 2025년부터 모든 기업에 주 4일 근무제를 의무화한다고 발표했다. 위반 기업에는 최대 1억 엔의 벌금이 부과된다.",
-     "fake", "• '모든 기업' 대상 전면 의무화는 극단적 정책 범위
-• 1억 엔(약 9억원) 벌금은 근로 관련 제재로는 이례적 규모
-• 급여 현행 유지 조건은 기업 부담 측면에서 비현실적", "일본은 주 4일제를 권장하고 있지만, 전면 의무화한 적은 없습니다."),
+     "fake", "• '모든 기업' 대상 전면 의무화는 극단적 정책 범위\n• 1억 엔(약 9억원) 벌금은 근로 관련 제재로는 이례적 규모\n• 급여 현행 유지 조건은 기업 부담 측면에서 비현실적", "일본은 주 4일제를 권장하고 있지만, 전면 의무화한 적은 없습니다."),
     ("국내 연구진, 폐배터리 재활용 기술로 리튬 회수율 95% 달성",
      "한국과학기술연구원(KIST) 연구팀이 폐배터리에서 리튬을 95% 이상 회수할 수 있는 친환경 재활용 기술을 개발했다. 기존 방식 대비 비용은 40% 절감된다.",
-     "real", "• KIST는 실존하는 정부출연 연구기관
-• 95% 회수율은 기술적으로 달성 가능한 범위
-• 비용 절감률 40%는 구체적이나 과장되지 않은 수치", "KIST는 실제로 폐배터리 재활용 기술 연구를 활발히 진행하고 있습니다."),
+     "real", "• KIST는 실존하는 정부출연 연구기관\n• 95% 회수율은 기술적으로 달성 가능한 범위\n• 비용 절감률 40%는 구체적이나 과장되지 않은 수치", "KIST는 실제로 폐배터리 재활용 기술 연구를 활발히 진행하고 있습니다."),
     ("애플, 아이폰 17에 홀로그램 디스플레이 탑재 확정",
      "애플이 차기 아이폰 17에 공중에 3D 홀로그램을 투사하는 디스플레이 기술을 탑재할 것이라고 공식 확인했다. 별도의 안경 없이 맨눈으로 입체 영상을 볼 수 있다.",
-     "fake", "• '공중 투사형 홀로그램'은 현재 연구 단계 기술
-• 애플은 미발표 제품 사양을 사전 공개하지 않는 것이 관례
-• '가격 동일 유지'는 신기술 탑재 시 비현실적 조건", "공중 홀로그램 디스플레이는 아직 상용화되지 않은 기술입니다."),
+     "fake", "• '공중 투사형 홀로그램'은 현재 연구 단계 기술\n• 애플은 미발표 제품 사양을 사전 공개하지 않는 것이 관례\n• '가격 동일 유지'는 신기술 탑재 시 비현실적 조건", "공중 홀로그램 디스플레이는 아직 상용화되지 않은 기술입니다."),
     ("정부, 청년 월세 지원금 월 20만원에서 30만원으로 인상",
      "국토교통부는 청년 주거 안정을 위해 청년 월세 특별지원 사업의 지원 금액을 월 최대 20만원에서 30만원으로 인상한다고 발표했다.",
-     "real", "• 국토교통부는 주거 정책 담당 부처
-• 청년 월세 특별지원은 기존에 운영 중인 사업명
-• 지원 대상(19~34세, 무주택)은 기존 정책 기준과 일치", "정부는 실제로 청년 월세 지원 사업을 운영하며 지원금을 확대해왔습니다."),
+     "real", "• 국토교통부는 주거 정책 담당 부처\n• 청년 월세 특별지원은 기존에 운영 중인 사업명\n• 지원 대상(19~34세, 무주택)은 기존 정책 기준과 일치", "정부는 실제로 청년 월세 지원 사업을 운영하며 지원금을 확대해왔습니다."),
     ("중국, 인공 태양 실험 성공으로 무한 에너지 상용화 선언",
      "중국 과학원은 핵융합 실험 장치 EAST에서 1억도 플라즈마를 무한 시간 유지하는 데 성공했다며, 2026년부터 가정용 무한 에너지 공급을 시작한다고 선언했다.",
-     "fake", "• '무한 시간 유지'는 물리학적으로 검증 불가능한 표현
-• EAST는 실존 장치이나 실험 기록은 수백 초 단위
-• 핵융합 상용화 예상 시점은 2050년대 이후가 학계 중론", "핵융합 상용화는 아직 수십 년이 걸릴 것으로 예상됩니다. 과장된 주장입니다."),
+     "fake", "• '무한 시간 유지'는 물리학적으로 검증 불가능한 표현\n• EAST는 실존 장치이나 실험 기록은 수백 초 단위\n• 핵융합 상용화 예상 시점은 2050년대 이후가 학계 중론", "핵융합 상용화는 아직 수십 년이 걸릴 것으로 예상됩니다. 과장된 주장입니다."),
     ("네이버, AI 검색 서비스 '큐(Cue:)' 정식 출시",
      "네이버가 생성형 AI 기반 검색 서비스 '큐(Cue:)'를 정식 출시했다. 기존 검색과 달리 대화형으로 질문에 답변하며, 출처를 함께 제공해 신뢰성을 높였다.",
-     "real", "• 네이버는 국내 최대 검색 포털 사업자
-• 생성형 AI 검색은 글로벌 IT 기업들의 공통 트렌드
-• '출처 제공' 기능은 AI 검색의 일반적 신뢰성 확보 방식", "네이버는 실제로 AI 검색 서비스를 출시하며 AI 전환을 추진하고 있습니다."),
+     "real", "• 네이버는 국내 최대 검색 포털 사업자\n• 생성형 AI 검색은 글로벌 IT 기업들의 공통 트렌드\n• '출처 제공' 기능은 AI 검색의 일반적 신뢰성 확보 방식", "네이버는 실제로 AI 검색 서비스를 출시하며 AI 전환을 추진하고 있습니다."),
     ("유럽연합, 스마트폰 배터리 교체 의무화 법안 시행",
      "EU는 2025년부터 모든 스마트폰 제조사에 사용자가 직접 배터리를 교체할 수 있는 설계를 의무화하는 법안을 시행한다.",
-     "real", "• EU는 USB-C 통일 등 전자기기 규제 선례 있음
-• 배터리 규정(Battery Regulation)은 실제 EU 입법 절차 존재
-• 제조사 설계 변경 요구는 EU 규제 방식과 일치", "EU는 실제로 배터리 교체 가능 설계를 의무화하는 규정을 통과시켰습니다."),
+     "real", "• EU는 USB-C 통일 등 전자기기 규제 선례 있음\n• 배터리 규정(Battery Regulation)은 실제 EU 입법 절차 존재\n• 제조사 설계 변경 요구는 EU 규제 방식과 일치", "EU는 실제로 배터리 교체 가능 설계를 의무화하는 규정을 통과시켰습니다."),
     ("테슬라, 완전 자율주행 차량으로 서울~부산 무인 운행 성공",
      "테슬라가 FSD v13을 탑재한 모델3로 서울에서 부산까지 약 400km를 운전자 개입 없이 완주했다고 발표했다.",
-     "fake", "• 한국 도로교통법상 레벨4 이상 자율주행 공도 운행 규정 확인 필요
-• FSD는 미국 내에서도 '감독 하 자율주행' 단계
-• 외국 기업의 국내 무인 주행 실험은 별도 허가 필요", "한국에서는 완전 자율주행 공도 실험이 법적으로 허용되지 않습니다."),
+     "fake", "• 한국 도로교통법상 레벨4 이상 자율주행 공도 운행 규정 확인 필요\n• FSD는 미국 내에서도 '감독 하 자율주행' 단계\n• 외국 기업의 국내 무인 주행 실험은 별도 허가 필요", "한국에서는 완전 자율주행 공도 실험이 법적으로 허용되지 않습니다."),
     ("카카오, 택시 호출 기본요금 인상 반영 시작",
      "카카오모빌리티는 각 지역 택시 기본요금 인상에 맞춰 앱 내 예상 요금 산정 기준을 업데이트했다고 밝혔다. 서울 기준 기본요금은 4,800원에서 5,400원으로 올랐다.",
-     "real", "• 택시 기본요금은 지자체가 결정하며 앱은 이를 반영
-• 4,800→5,400원 인상폭(600원)은 과거 인상 사례와 유사
-• 카카오모빌리티는 실존 택시 플랫폼 사업자", "택시 기본요금은 실제로 인상되었으며, 카카오택시 앱에 반영됩니다."),
+     "real", "• 택시 기본요금은 지자체가 결정하며 앱은 이를 반영\n• 4,800→5,400원 인상폭(600원)은 과거 인상 사례와 유사\n• 카카오모빌리티는 실존 택시 플랫폼 사업자", "택시 기본요금은 실제로 인상되었으며, 카카오택시 앱에 반영됩니다."),
     ("구글, 검색 결과에서 AI가 거짓으로 판단한 뉴스 자동 삭제 시작",
      "구글이 AI 알고리즘을 통해 허위 정보로 판단된 뉴스 기사를 검색 결과에서 자동 삭제하는 기능을 전 세계에 적용했다.",
-     "fake", "• '자동 삭제'는 검색엔진의 일반적 운영 방식(순위 조정)과 다름
-• 전 세계 동시 적용은 각국 법률 차이로 인해 난이도 높음
-• 언론사 콘텐츠 삭제는 법적 분쟁 소지가 큰 조치", "구글은 AI 판단만으로 뉴스를 자동 삭제하는 정책은 시행하지 않습니다."),
+     "fake", "• '자동 삭제'는 검색엔진의 일반적 운영 방식(순위 조정)과 다름\n• 전 세계 동시 적용은 각국 법률 차이로 인해 난이도 높음\n• 언론사 콘텐츠 삭제는 법적 분쟁 소지가 큰 조치", "구글은 AI 판단만으로 뉴스를 자동 삭제하는 정책은 시행하지 않습니다."),
     ("현대차, 전기차 배터리 보증 기간 10년으로 확대",
      "현대자동차가 신규 출시되는 전기차 모델부터 배터리 보증 기간을 기존 8년에서 10년으로 확대한다고 발표했다.",
-     "real", "• 8→10년 확대는 점진적 변화로 업계 트렌드와 부합
-• 배터리 보증 경쟁은 전기차 시장의 실제 마케팅 전략
-• 20만km 조건 병기는 자동차 보증 표기 관례", "현대차는 실제로 전기차 배터리 보증을 확대하는 추세입니다."),
+     "real", "• 8→10년 확대는 점진적 변화로 업계 트렌드와 부합\n• 배터리 보증 경쟁은 전기차 시장의 실제 마케팅 전략\n• 20만km 조건 병기는 자동차 보증 표기 관례", "현대차는 실제로 전기차 배터리 보증을 확대하는 추세입니다."),
     ("일론 머스크, 뇌에 칩 이식한 원숭이와 텔레파시 통화 성공 주장",
      "일론 머스크는 뉴럴링크가 뇌에 칩을 이식한 원숭이 두 마리 간 생각만으로 의사소통하는 '텔레파시 통화'에 성공했다고 게시했다.",
-     "fake", "• 출처가 학술 논문이 아닌 개인 SNS 게시물
-• '텔레파시'는 과학 용어가 아닌 대중적 표현
-• 뉴럴링크의 공개된 기술은 뇌→컴퓨터 단방향 신호 해독 단계", "뉴럴링크는 뇌-컴퓨터 인터페이스를 연구하지만, 동물 간 텔레파시 통화는 달성된 적 없습니다."),
+     "fake", "• 출처가 학술 논문이 아닌 개인 SNS 게시물\n• '텔레파시'는 과학 용어가 아닌 대중적 표현\n• 뉴럴링크의 공개된 기술은 뇌→컴퓨터 단방향 신호 해독 단계", "뉴럴링크는 뇌-컴퓨터 인터페이스를 연구하지만, 동물 간 텔레파시 통화는 달성된 적 없습니다."),
     ("기상청, 올여름 역대 최고 폭염 예보 발표",
      "기상청은 올해 여름 평균 기온이 평년보다 1.5도 이상 높을 것으로 예측하며, 역대 최고 수준의 폭염이 예상된다고 발표했다.",
-     "real", "• 기상청은 계절 전망을 정기적으로 발표하는 기관
-• '평년 대비 +1.5도'는 기상 예보에서 사용하는 표현 방식
-• 온열질환 행동요령 안내는 기상청 업무 범위", "기상청은 매년 계절 전망을 발표하며, 폭염 예보는 실제 업무 범위입니다."),
+     "real", "• 기상청은 계절 전망을 정기적으로 발표하는 기관\n• '평년 대비 +1.5도'는 기상 예보에서 사용하는 표현 방식\n• 온열질환 행동요령 안내는 기상청 업무 범위", "기상청은 매년 계절 전망을 발표하며, 폭염 예보는 실제 업무 범위입니다."),
     ("삼성전자, 갤럭시 S25에 체온 측정 기능 탑재 확정",
      "삼성전자가 갤럭시 S25 시리즈에 손가락을 대면 체온을 측정할 수 있는 적외선 센서를 탑재한다고 공식 발표했다.",
-     "fake", "• 스마트폰 적외선 센서의 정확도는 의료기기 인증 기준과 차이 있음
-• '의료용 체온계 수준'이라는 표현은 의료기기 인증 없이 사용 불가
-• 삼성 공식 발표 채널(뉴스룸) 확인 가능 여부", "갤럭시 S25에 체온 측정 기능이 탑재된다는 공식 발표는 없었습니다."),
+     "fake", "• 스마트폰 적외선 센서의 정확도는 의료기기 인증 기준과 차이 있음\n• '의료용 체온계 수준'이라는 표현은 의료기기 인증 없이 사용 불가\n• 삼성 공식 발표 채널(뉴스룸) 확인 가능 여부", "갤럭시 S25에 체온 측정 기능이 탑재된다는 공식 발표는 없었습니다."),
     ("국회, 주 52시간 근무제 예외 업종 확대 법안 통과",
      "국회 본회의에서 IT, 게임, 연구개발 등 특정 업종에 대해 주 52시간 근무제 예외를 허용하는 근로기준법 개정안이 통과됐다.",
-     "real", "• 근로기준법 개정은 국회 본회의 의결 사항
-• IT/게임/R&D 업종 예외는 실제 논의된 정책 방향
-• 노동계 반발은 근로시간 관련 법안의 일반적 반응", "근로시간 유연화 법안은 실제로 국회에서 논의되고 있는 사안입니다."),
+     "real", "• 근로기준법 개정은 국회 본회의 의결 사항\n• IT/게임/R&D 업종 예외는 실제 논의된 정책 방향\n• 노동계 반발은 근로시간 관련 법안의 일반적 반응", "근로시간 유연화 법안은 실제로 국회에서 논의되고 있는 사안입니다."),
 ]
 
 
 ERROR_TEMPLATE = """
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8"><title>오류</title></head>
-<body>
-<h1>오류</h1>
-<p>{{ message }}</p>
-<a href="/">처음으로</a>
-</body>
+<head><meta charset="utf-8"><title>오류</title>
+<style>
+body{font-family:-apple-system,sans-serif;background:#1a1a2e;color:#eee;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0}
+.card{background:#16213e;border-radius:16px;padding:40px;max-width:500px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+a{color:#4fc3f7;text-decoration:none;font-size:1.1em}
+</style></head>
+<body><div class="card"><h1>⚠️ 오류</h1><p>{{ message }}</p><a href="/">처음으로</a></div></body>
 </html>
 """
 
 RESULT_TEMPLATE = """
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8"><title>게임 종료</title></head>
+<head><meta charset="utf-8"><title>게임 종료</title>
+<style>
+body{font-family:-apple-system,sans-serif;background:#1a1a2e;color:#eee;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0}
+.card{background:#16213e;border-radius:16px;padding:50px;max-width:500px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.score{font-size:4em;font-weight:bold;color:#ffd700;margin:20px 0}
+.btn{display:inline-block;padding:14px 36px;background:#4fc3f7;color:#1a1a2e;border-radius:30px;text-decoration:none;font-size:1.1em;font-weight:bold;margin-top:20px;transition:transform .2s}
+.btn:hover{transform:scale(1.05)}
+</style></head>
 <body>
-<h1>게임 종료</h1>
-<p style="font-size:2em;">{{ score }}/5</p>
-<a href="/">다시 시작</a>
+<div class="card">
+<h1>🏁 게임 종료</h1>
+<div class="score">{{ score }} / 5</div>
+<a href="/" class="btn">🔄 다시 시작</a>
+</div>
 </body>
 </html>
 """
@@ -139,35 +109,60 @@ RESULT_TEMPLATE = """
 GAME_TEMPLATE = """
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8"><title>가짜 뉴스 판별 게임</title></head>
+<head><meta charset="utf-8"><title>가짜 뉴스 판별 게임</title>
+<style>
+body{font-family:-apple-system,sans-serif;background:#1a1a2e;color:#eee;display:flex;flex-direction:column;align-items:center;min-height:100vh;margin:0;padding:20px;box-sizing:border-box}
+.status{display:flex;gap:30px;margin-bottom:20px;font-size:1.1em}
+.status span{background:#16213e;padding:8px 20px;border-radius:20px}
+.card{background:#16213e;border-radius:16px;padding:30px 36px;max-width:600px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.card h2{color:#4fc3f7;margin-top:0;font-size:1.3em;line-height:1.4}
+.card p{line-height:1.7;color:#ccc;font-size:1.05em}
+.buttons{display:flex;gap:16px;margin-top:24px;justify-content:center}
+.btn{padding:14px 36px;border:none;border-radius:30px;font-size:1.1em;font-weight:bold;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:scale(1.05)}
+.btn-real{background:#4caf50;color:#fff}
+.btn-fake{background:#f44336;color:#fff}
+.btn-next{background:#4fc3f7;color:#1a1a2e}
+.result-box{margin-top:20px;padding:16px 24px;border-radius:12px;font-size:1.1em;font-weight:bold;text-align:center}
+.correct{background:rgba(76,175,80,.2);border:2px solid #4caf50;color:#4caf50}
+.wrong{background:rgba(244,67,54,.2);border:2px solid #f44336;color:#f44336}
+.explanation{margin-top:12px;padding:12px 16px;background:rgba(255,255,255,.05);border-radius:8px;color:#aaa;font-size:.95em}
+details{margin-top:16px;cursor:pointer}
+summary{color:#ffd700;font-size:1em}
+details p{white-space:pre-line;color:#aaa;font-size:.9em;margin-top:8px}
+</style></head>
 <body>
-<h1>라운드 {{ round }}/5</h1>
+<div class="status">
+<span>📰 라운드 {{ round }} / 5</span>
+<span>⭐ 점수 {{ score }}</span>
+</div>
+<div class="card">
 <h2>{{ title }}</h2>
 <p>{{ content }}</p>
 
 {% if not answered %}
 <details>
     <summary>💡 힌트 보기</summary>
-    <p style="white-space:pre-line;"><em>{{ hint }}</em></p>
+    <p>{{ hint }}</p>
 </details>
-<br>
-<form method="post" action="/answer">
-    <button type="submit" name="answer" value="real">진짜</button>
-    <button type="submit" name="answer" value="fake">가짜</button>
+<form method="post" action="/answer" class="buttons">
+    <button type="submit" name="answer" value="real" class="btn btn-real">✅ 진짜</button>
+    <button type="submit" name="answer" value="fake" class="btn btn-fake">❌ 가짜</button>
 </form>
 {% endif %}
 
 {% if answered %}
 {% if last_correct %}
-<p><strong>✅ 정답!</strong></p>
+<div class="result-box correct">✅ Correct! 정답입니다</div>
 {% else %}
-<p><strong>❌ 오답!</strong> 정답은 {{ "진짜" if last_label == "real" else "가짜" }}였습니다.</p>
+<div class="result-box wrong">❌ Wrong! 정답은 {{ "진짜" if last_label == "real" else "가짜" }}였습니다</div>
 {% endif %}
-<p style="color:gray;">📝 {{ explanation }}</p>
-<form method="post" action="/next">
-    <button type="submit">다음</button>
+<div class="explanation">📝 {{ explanation }}</div>
+<form method="post" action="/next" class="buttons">
+    <button type="submit" class="btn btn-next">다음 →</button>
 </form>
 {% endif %}
+</div>
 </body>
 </html>
 """
@@ -258,7 +253,7 @@ def index():
     article = get_article(article_ids[0])
     return render_template_string(GAME_TEMPLATE, title=article["title"], content=article["content"],
                                   hint=article["hint"], explanation="", round=1, answered=False,
-                                  last_correct=None, last_label=None)
+                                  last_correct=None, last_label=None, score=0)
 
 
 @app.route("/answer", methods=["POST"])
@@ -278,7 +273,7 @@ def answer():
     if answer_value not in ("real", "fake"):
         return render_template_string(GAME_TEMPLATE, title=article["title"], content=article["content"],
                                       hint=article["hint"], explanation="", round=current_round,
-                                      answered=False, last_correct=None, last_label=None)
+                                      answered=False, last_correct=None, last_label=None, score=session.get("score", 0))
 
     is_correct = answer_value == article["label"]
     session["answered"] = True
@@ -290,7 +285,7 @@ def answer():
     return render_template_string(GAME_TEMPLATE, title=article["title"], content=article["content"],
                                   hint=article["hint"], explanation=article["explanation"],
                                   round=current_round, answered=True, last_correct=is_correct,
-                                  last_label=article["label"])
+                                  last_label=article["label"], score=session.get("score", 0))
 
 
 @app.route("/result", methods=["GET"])
@@ -320,7 +315,7 @@ def next_round():
 
     return render_template_string(GAME_TEMPLATE, title=article["title"], content=article["content"],
                                   hint=article["hint"], explanation="", round=session["current_round"],
-                                  answered=False, last_correct=None, last_label=None)
+                                  answered=False, last_correct=None, last_label=None, score=session.get("score", 0))
 
 
 if __name__ == "__main__":
